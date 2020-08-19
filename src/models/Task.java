@@ -25,14 +25,14 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "content", length = 255 , nullable = false)
+    private String content;
+
     @Column(name = "created_at",nullable = false)
     private Timestamp created_at;
 
     @Column(name = "updated_at",nullable = false)
     private Timestamp updated_at;
-
-    @Column(name = "content",nullable = false)
-    private Timestamp content;
 
     public Integer getId() {
         return id;
@@ -40,6 +40,14 @@ public class Task {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public Timestamp getCreated_at() {
@@ -58,13 +66,6 @@ public class Task {
         this.updated_at = updated_at;
     }
 
-    public Timestamp getContent() {
-        return content;
-    }
-
-    public void setContent(Timestamp content) {
-        this.content = content;
-    }
 
 
 }
